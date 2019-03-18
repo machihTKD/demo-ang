@@ -1,0 +1,119 @@
+<!-- NavBar -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">OpenClassRoom App</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Angular 7</a></li>
+      <li><a href="#">Angular 6</a></li>
+      <li><a href="#">Angular 5</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<!-- section theme newsletters -->
+
+<div class="jumbotron text-center">
+  <h1>OpenClassRoom</h1> 
+  <p>Meilleur site d'apprentissage en ligne</p> 
+  <form class="form-inline">
+    <div class="input-group">
+      <input type="email" class="form-control" size="50" placeholder="Adresse Email" required>
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-danger">Abonnez-vous</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<!-- Forms -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+ <form>
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    <input id="password" type="password" class="form-control" name="password" placeholder="Mot de passe">
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon">Message</span>
+    <input id="msg" type="text" class="form-control" name="msg" placeholder="votre message">
+  </div>
+</form>
+    </div>
+  </div>
+</div>
+
+<!-- theme band -->
+<div class="container text-center">
+  <h3>Cours informatiques</h3>
+  <p><em>Nous aimons ce que nous faisons</em></p>
+  <p>c'est la raison pour laquelle nous avons crée cette App. </p>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <p><strong>Informatique décisionnelle</strong></p><br>
+      <img src="assets\Img\img1.png" alt="openclassroom1">
+    </div>
+    <div class="col-sm-4">
+      <p><strong>Informatique technique</strong></p><br>
+      <img src="assets\Img\img2.png" alt="openclassroom2">
+    </div>
+    <div class="col-sm-4">
+      <p><strong>Informatique fonctionnelle</strong></p><br>
+      <img src="assets\Img\img3.png" alt="openclassroom3">
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Composant des appareils -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Mes appareils</h2>
+
+       <p>Mis à jour : {{ lastUpdate | async | date | uppercase }}</p>
+ 
+      <ul class="list-group">
+                <app-appareil *ngFor="let appareil of appareils"
+                       [appareilName]="appareil.name"
+                       [appareilStatus]="appareil.status" ></app-appareil> 
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+                <app-open-class-rooms><p>Mis à jour : {{ lastUpdate | async | date | uppercase }}</p></app-open-class-rooms>
+
+<button class="btn btn-success" 
+              [disabled]="!isAuth"
+              (click)="onAllumer()">Tout allumer</button> 
+
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+
