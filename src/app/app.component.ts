@@ -10,7 +10,7 @@ import {AppareilComponent}  from './appareil/appareil.component';
 })
 
 export class AppComponent {
-/*  title = 'OpenClassRooms Exercice';*/
+/*  title = 'demo ang project';*/
   isAuth = false;
   appareilStatus : String;
   appreilName : String;
